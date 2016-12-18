@@ -1,0 +1,285 @@
+.site-title{
+	color: $text-color;
+	font-weight: bold;
+	font-size: 2.2rem;
+}
+
+.btn{
+
+	display: inline-block;
+	margin-bottom: 0.5rem;
+	border: none;
+	border-radius: 8px;
+	padding: 8px 24px;
+	color: white;
+	text-decoration: none;
+	font-size: 1.6rem;
+	cursor: pointer;
+
+	&:hover{
+		text-decoration: none;
+	}
+
+	&.btn-primary{
+
+		background-color: $primary-color;
+
+		&:hover{
+			background-color: lighten( $primary-color, 6% );
+		}
+	}
+}
+
+.btn-large{
+	font-size: 2.0rem;
+}
+
+
+pre{
+	border-radius: 5px;
+	/*background-color: #DEDEDE;*/
+	padding: 10px;
+	overflow: auto;
+}
+
+	code,
+	pre code{
+		/*background-color: #DEDEDE;*/
+		padding: 4px 5px;
+		/*color: #1C1C1C;*/
+		font-family: monospace;
+		white-space: pre;
+	}
+
+ul{
+	padding-inline-start: 30px;
+}
+
+ul.menu{
+
+	margin: 0;
+	padding: 0;
+
+	&.h li{
+		float: left;
+	}
+}
+
+blockquote{
+	position: relative;
+	line-height: 1.0;
+	font-size: larger;
+	font-style: italic;
+	font-weight: bold;
+
+	::before,
+	::after{
+		color: blue;
+		font-size: 4.0rem;
+	}
+
+	::before{
+		position: absolute;
+		top: -10px;
+		left: -30px;
+		content: "“";
+	}
+
+	::after{
+		position: relative;
+		bottom: -26px;
+		right: -2px;
+		content: "”";
+	}
+
+	p{
+	}
+}
+
+figcaption{
+	color: #999999;
+	text-align: center;
+	font-style: italic;
+}
+
+figure.small{
+	width: 40%;
+	min-width: 300px;
+}
+
+figure.medium{
+	width: 60%;
+	min-width: 350px;
+}
+
+form{
+	margin: 0 auto;
+
+	.form-footer{
+		text-align: center;
+	}
+
+
+	label{
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	input,
+	textarea{
+		display: block;
+		margin-bottom: 10px;
+		border: 1px solid #ced4da;
+		border-radius: 4px;
+		padding: 6px 12px;
+		width: 100%;
+		font-size: 1.6rem;
+	}
+
+	input{
+	}
+
+	textarea{
+		height: 100px;
+	}
+
+	input[type="submit"]{
+		width: auto;
+	}
+}
+
+
+div.pager{
+	margin-top: 30px;
+	border-top: 1px solid #333333;
+	height: 60px;
+
+	a.older{
+		float: right;
+	}
+}
+
+
+div.share-buttons{
+	position: fixed;
+	top: 50%;
+	left: 0;
+	margin-top: -96px;
+	text-align: center;
+
+	div,
+	a{
+		display: block;
+		width: 48px;
+		height: 48px;
+		color: white;
+		line-height: 48px;
+	}
+
+	div{
+		background-color: white;
+		color: black;
+		font-size: 1.4rem;
+
+		&.share-down{
+			padding-top: 10px;
+			line-height: 15px;
+		}
+
+		&.share-right{
+			display: none;
+		}
+	}
+
+	a{
+		font-size: 2.0rem;
+		transition: width 1s;
+
+		&:hover{
+			width: 64px;
+			transition: width 500ms;
+		}
+
+		&.twitter{
+			background-color: #1DA1F2;
+		}
+
+		&.hacker-news{
+			background-color: #FF6600;
+		}
+
+		&.reddit{
+			background-color: #FF4500;
+		}
+
+		&.facebook{
+			background-color: #3B5998;
+		}
+
+		&.linkedin{
+			background-color: #0077B5;
+		}
+	}
+}
+
+table{
+	width: 100%;
+
+	thead{
+		border-bottom: 2px solid white;
+	}
+
+	tr:nth-child(odd){
+		background-color: #010101;
+	}
+
+	tr:nth-child(even){
+		background-color: #121212;
+	}
+
+	td{
+		padding: 5px 15px;
+	}
+}
+
+.term.term-short{
+}
+
+a.term,
+div.term{
+
+	display: block;
+	margin: 0 auto;
+	background-color: white;
+	padding: 15px;
+	width: 50%;
+	min-width: 400px;
+	color: $almost-black;
+	text-decoration: none;
+
+	&:hover{
+		text-decoration: none;
+	}
+
+	.the-term{
+		margin: 0;
+		color: $almost-black;
+		font-weight: bold;
+	}
+
+	&.term-short .the-term{
+		font-size: 2.2rem;
+	}
+
+	&.term-full{
+		font-size: 3.2rem;
+	}
+
+	.acronym{
+		color: lighten( $primary-color, 6% );
+	}
+
+	.definition{
+		display: block;
+	}
+}

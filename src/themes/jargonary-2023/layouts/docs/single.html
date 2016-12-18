@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="search-bar">
+	<form class="search">
+		<i data-feather="search"></i>
+		<input type="text" />
+	</form>
+</div>
+<main class="container-xxl single">
+	<article class="container-s">
+		<h1>{{ .Title }}</h1>
+		<div class="content">{{ .Content }}</div>
+	</article>
+</main>
+{{ end }}

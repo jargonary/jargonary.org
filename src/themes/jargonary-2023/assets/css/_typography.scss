@@ -1,0 +1,115 @@
+html{
+	font-size: 62.5%;
+}
+
+body{
+	color: $text-color;
+	line-height: 1.5;
+	font-family: 'Rubik', 'Ubuntu', sans-serif;
+	font-size: 1.8rem;
+}
+
+.site-title{
+}
+
+a{
+	color: lighten( $primary-color, 10% );
+	text-decoration: none;
+}
+
+ul.menu{
+
+	li.active a{
+	}
+
+	a{
+		color: $text-color;
+	}
+}
+
+main{
+	h1,
+	h2,
+	h3,
+	h4,
+	h5{
+		margin-bottom: 1.125rem;
+		color: white;
+	}
+
+	h1{
+		font-size: 5.2rem;
+	}
+
+	h2{
+		font-size: 3.2rem;
+	}
+
+	h3{
+		font-size: 2.8rem;
+	}
+
+	a{
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+	a.continue{
+		color: #FFFFFF;
+		font-weight: bold;
+	}
+
+	a.comment{
+		font-weight: bold;
+	}
+}
+
+body > header a{
+	display: inline-block;
+	position: relative;
+
+	&::after{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: white;
+		width: 100%;
+		height: 2px;
+		content: '';
+		transform: scaleX(0);
+		transform-origin: bottom right;
+		transition: transform 0.25s ease-in;
+	}
+
+	&:hover::after{
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+}
+
+main.list,
+main.single{
+	h1{
+		border-bottom: 5px solid $secondary-color;
+	}
+}
+
+main.list{
+
+	h1 + p{
+		font-size: 2.4rem;
+	}
+}
+
+main.single{
+
+	h1 + span{
+		text-align: center;
+		font-size: 3.5rem;
+	}
+}
+
+footer{
+	font-size: 1.6rem;
+}

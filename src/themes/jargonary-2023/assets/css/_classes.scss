@@ -1,0 +1,44 @@
+.container,
+.container-xxl{
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 1320px;
+}
+
+.container-s{
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 49%;
+}
+
+.aligncenter{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	clear: both;
+}
+
+.alignleft{
+	float: left;
+	margin-right: 1.5rem;
+}
+
+.alignright{
+	float: right;
+	margin-left: 1.5rem;
+}
+
+.button{
+	display: inline-block;
+	margin: 2px;
+	border-radius: 5px;
+	background-color: blue;
+	padding: 8px 20px;
+	color: white !important;
+	text-decoration: none;
+
+	&:hover{
+		opacity: 0.9;
+	}
+}

@@ -1,0 +1,33 @@
+{{ define "main" }}
+<main class="list">
+	<h1>{{ .Title }}</h1>
+	{{ if .Content }}<div class="content">{{ .Content }}</div>{{ end }}
+	{{ range (.Paginate .Pages.ByDate.Reverse).Pages }}
+		<article id="{{ .File.UniqueID }}">
+		{{ if and (.Params.feature) (ne .Params.featureHide true) }}
+			{{ $image := (resources.Get (printf "img/blog/%s" .Params.feature)).Fill "350x200"  }}
+			<a class="feature" href="{{ .Permalink }}"><img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"></a>
+		{{ end }}
+			<div class="after-feature">
+				<header>
+					<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+				</header>
+				<p class="content">
+					{{ .Summary }}
+				{{ if .Truncated }}
+					<a class="continue" href="{{ .Permalink }}">continue&nbsp;reading&nbsp;→</a>
+				{{ end }}
+				</p>
+				<footer>
+					<div class="post-meta">
+						By <a class="author" href="https://www.feliciano.tech">Ricardo N Feliciano</a>
+						<span class="divider">·</span>
+						<span class="posted-on">Published <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time></span>
+					</div>
+				</footer>
+			</div>
+		</article>
+	{{ end }}
+	{{ partial "pager" . }}
+</main>
+{{ end }}

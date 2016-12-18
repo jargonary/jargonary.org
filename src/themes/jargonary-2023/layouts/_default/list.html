@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main class="list">
+	<h1>{{ .Title }}</h1>
+	{{ .Content }}
+	<div class="terms">
+	{{ range .Pages }}
+		<a href="{{ .RelPermalink }}" class="term term-short">
+			<span class="the-term">{{ .Title }}</span>
+			{{ with .Params.acronym }}<span class="acronym">({{ . }})</span>{{ end }}
+			<span class="definition">{{ .Params.definition }}</span>
+		</a>
+	{{ end }}
+	</div>
+</main>
+{{ end }}

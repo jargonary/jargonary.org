@@ -1,0 +1,34 @@
+baseurl: "https://jargonary.org/"
+title: "Jargonary"
+languageCode: "en-us"
+theme: "jargonary-2023"
+
+googleAnalytics: "G-7QCNW5ZNRH"
+
+enableEmoji: true
+
+summaryLength: 30
+
+imaging:
+  quality: 100
+  resampleFilter: "Lanczos"
+
+params:
+  description: "Learn the jargon for your favorite topics. Words, acronyms, and definitions."
+
+blackfriday:
+  hrefTargetBlank: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+menu:
+  main:
+    - name: "SaaS"
+      url:  "/saas/"
+      weight: 10
+    - name: "Contact"
+      url:  "/contact/"
+      weight: 20

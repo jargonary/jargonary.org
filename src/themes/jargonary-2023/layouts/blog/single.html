@@ -1,0 +1,34 @@
+{{ define "main" }}
+<main class="single">
+<article id="{{ .File.UniqueID }}">
+	<header>
+		<h1>{{ .Title }}</h1>
+		<div class="post-meta">
+			By <a class="author" href="https://www.feliciano.tech">Ricardo N Feliciano</a>
+			<span class="divider">·</span>
+			<span class="posted-on">Published <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time></span>
+		</div>
+	{{ if and (.Params.feature) (ne .Params.featureHide true) }}
+		{{ $image := (resources.Get (printf "img/blog/%s" .Params.feature)).Fill "1920x1080"  }}
+		<img class="feature" src="{{ $image.RelPermalink }}">
+	{{ end }}
+	</header>
+	<div class="content">{{ .Content }}</div>
+	<footer>
+		<div class="post-links">
+		{{ range (.GetTerms "categories") }}
+			<a class="post-link category-link" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+		{{ end }}
+		{{ range (.GetTerms "tags") }}
+			<a class="post-link tag-link" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+		{{ end }}
+		</div>
+	</footer>
+</article>
+{{ if hugo.IsProduction }}
+{{ else }}
+<p>In production mode, Disqus comments will appear here.</p>
+{{ end }}
+</main>
+{{ partial "share-buttons" . }}
+{{ end }}

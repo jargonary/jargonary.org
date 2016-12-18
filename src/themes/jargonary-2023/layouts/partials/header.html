@@ -1,0 +1,15 @@
+<header>
+	<nav class="container-xxl">
+		<a class="site-title" href="/">{{ .Site.Title }}</a>
+		<ul class="menu h main">
+		{{ range .Site.Menus.main }}
+			{{ $active := eq $.RelPermalink (.URL | relLangURL) }}
+			{{ $active = or $active (eq $.Section (lower .Name)) }}
+			<li class="{{ if $active }}active{{end}}">
+				<a href="{{ .URL }}">{{ .Name }}</a>
+			</li>
+		{{ end }}
+		</ul>
+		<a class="toggle"><span class="fas fa-bars"></span></a>
+	</nav>
+</header>
