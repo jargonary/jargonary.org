@@ -38,31 +38,6 @@ main.single{
 			font-size: 3.5rem;
 		}
 	}
-
-	div.share-buttons{
-		top: auto;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		display: flex;
-
-		div,
-		a{
-			width: 100%;
-		}
-
-		div.share-down{
-			display: none;
-		}
-
-		div.share-right{
-			display: block;
-		}
-	}
-
-	body.section-blog{
-		padding-bottom: 48px; /* Make space for social share buttons. */
-	}
 }
 
 
@@ -74,39 +49,6 @@ main.single{
 	body > header nav{
 		ul.social li:not( .site-title ){
 			display: none;
-		}
-
-		ul.main{
-			display: none;
-			position: absolute;
-			top: 70px;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			background-color: white;
-			z-index: 100;
-
-			&.h li{
-				float: none;
-				text-align: center;
-			}
-
-			li.social-links{
-				display: list-item;
-
-				a{
-					display: inline-block;
-					padding: 0 5px;
-				}
-			}
-		}
-
-		a.toggle{
-			display: block;
-			margin-right: -10px;
-			width: 66px;
-			text-align: center;
-			font-size: 2.2rem;
 		}
 	}
 
@@ -152,17 +94,6 @@ main.single{
 @media(max-width: 500px){
 
 	body > header nav{
-
-		ul.social{
-			padding-left: 56px;
-			width: 100%;
-			text-align: center;
-			.site-title{
-				padding-right: 0px;
-				width: 100%;
-			}
-		}
-
 	}
 
 	main.list,
