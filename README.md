@@ -18,6 +18,23 @@ hugo -s src serve
 You'll then be able to view the site in your browser at `http://localhost:1313/`.
 
 
+## How to add a term to the website
+
+You can add a new term to a topic on Jargonary by creating a Markdown file in the directory for the topic.
+For example, terms for "SaaS" would go in `src/content/saas/new-term.md`.
+Hugo has a `new` command allowing you to use a template when creating this file.
+To add a term to "SaaS" for example, you would run:
+
+```bash
+hugo -s src new saas/new-term.md
+```
+
+That will create a template file for you at the correct location.
+Then you can edit the file and fill in the appropriate information.
+
+**Note: If the term has an acronym, use that acronym as the filename. If it doesn't, use the full term, all lowercase, with hyphens instead of spaces, as the filename.**
+
+
 ## License
 
 The source code for `jargonary.org` is licensed under the MIT license.
