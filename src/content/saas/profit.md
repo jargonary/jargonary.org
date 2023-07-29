@@ -1,5 +1,5 @@
 ---
 title: "Profit"
 acronym: ""
-definiton: "The difference between revenue and expenses."
+definition: "The difference between revenue and expenses."
 ---
