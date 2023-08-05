@@ -79,10 +79,28 @@ main.single{
 	}
 }
 
-body > footer{
+body > footer > div{
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
 	padding: 1.125rem 0;
 	height: 60px;
+
+	li{
+		margin-left: 10px;
+		list-style: none;
+
+		&::before{
+			margin-right: 10px;
+			content: "•"
+		}
+
+		&:first-child::before{
+			content: ""
+		}
+
+		a:hover{
+			text-decoration: underline;
+		}
+	}
 }
