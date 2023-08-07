@@ -26,8 +26,7 @@ markup:
 
 menu:
   main:
-    - name: "SaaS"
-      url:  "/saas/"
+    - name: "Topics"
       weight: 10
     - name: "Contact"
       url:  "/contact/"

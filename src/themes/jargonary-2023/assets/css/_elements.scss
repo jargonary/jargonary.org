@@ -60,8 +60,34 @@ ul.menu{
 	margin: 0;
 	padding: 0;
 
-	&.h li{
-		float: left;
+	&.h{
+
+		display: flex;
+
+		> li{
+			padding: 0 12px;
+		}
+
+		a + ul{
+
+		}
+	}
+
+	a{
+		position: relative;
+	}
+
+	li > ul{
+		display: none;
+		flex-direction: column;
+		text-align: left;
+		position: absolute;
+		background-color: #1c1c1c;
+		padding: 6px 8px;
+	}
+
+	li:hover > ul{
+		display: flex;
 	}
 }
 

@@ -16,15 +16,11 @@ body > header{
 		padding: 0 24px;
 
 		li{
-			padding: 0 12px;
 		}
 
-		ul.main{
+		.menu{
 			flex-grow: 1;
-
-			li:first-child{
-				padding-left: 26px;
-			}
+			margin-left: 10px;
 		}
 	}
 }
