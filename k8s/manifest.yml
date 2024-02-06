@@ -6,7 +6,7 @@ metadata:
   labels:
     app: jargonary-website
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: jargonary-website
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: jargonary-website
-        image: "ghcr.io/jargonary/jargonary.org:dockerize"
+        image: "ghcr.io/jargonary/jargonary.org:latest"
         ports:
         - containerPort: 80
 ---
@@ -44,8 +44,15 @@ metadata:
   name: jargonary-website
   labels:
     app: jargonary-website
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
-  ingressClassName: caddy
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - jargonary.org
+    - www.jargonary.org
+    secretName: jargonary-website-tls
   rules:
   - host: jargonary.org
     http:
