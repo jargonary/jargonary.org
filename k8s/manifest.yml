@@ -41,18 +41,19 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   namespace: static-websites
-  name: jargonary-website
+  name: jargonary-website-redirect
   labels:
     app: jargonary-website
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
+    nginx.ingress.kubernetes.io/permanent-redirect: "https://jargonary.feliciano.tech"
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
     - jargonary.org
     - www.jargonary.org
-    secretName: jargonary-website-tls
+    secretName: jargonary-website-tls-redirect
   rules:
   - host: jargonary.org
     http:
@@ -65,6 +66,33 @@ spec:
             port:
               number: 80
   - host: www.jargonary.org
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: jargonary-website
+            port:
+              number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: static-websites
+  name: jargonary-website
+  labels:
+    app: jargonary-website
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - jargonary.feliciano.tech
+    secretName: jargonary-website-tls
+  rules:
+  - host: jargonary.feliciano.tech
     http:
       paths:
       - pathType: Prefix
